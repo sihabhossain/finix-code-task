@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EventTabContent from "./TabContent";
+import PaymentMethodModal from "./modals/PaymentModal";
 
 export default function EventSection() {
   const [activeTab, setActiveTab] = useState<"info" | "player" | "comments">(
@@ -99,9 +100,9 @@ export default function EventSection() {
                 <span className="text-gray-500 text-sm">/player (both)</span>
               </div>
             </div>
-            <button className="w-full bg-[#5FD6A2] hover:bg-[#4ac18c] text-black font-semibold py-2.5 rounded-full transition duration-200">
-              Join event
-            </button>
+            <div>
+              <PaymentMethodModal />
+            </div>
           </div>
         </div>
       </div>
